@@ -19,11 +19,11 @@ connection.once('open', async () => {
     await connection.dropCollection('tags');
   }
 
-  // Empty arrays for randomly generated posts and tags
+ 
   const tags = [];
   const posts = [];
 
-  // Function to make a post object and push it into the posts array
+
   const makePost = (text) => {
     posts.push({
       published: Math.random() < 0.5,
@@ -32,7 +32,7 @@ connection.once('open', async () => {
     });
   };
 
-  // Create 20 random tags and push them into the tags array
+
   for (let i = 0; i < 20; i++) {
     const tagname = getRandomColor();
 
@@ -42,16 +42,15 @@ connection.once('open', async () => {
     });
   }
 
-  // Wait for the tags to be inserted into the database
+
   await Tags.collection.insertMany(tags);
 
-  // For each of the tags that exist, make a random post of length 50
+  
   tags.forEach(() => makePost(getRandomPost(50)));
 
-  // Wait for the posts array to be inserted into the database
   await Post.collection.insertMany(posts);
 
-  // Log out a pretty table for tags and posts, excluding the excessively long text property
+  
   console.table(tags);
   console.table(posts, ['published', 'tags', '_id']);
   console.timeEnd('seeding');
