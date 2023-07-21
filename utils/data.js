@@ -19,7 +19,7 @@ const thoughts = [
       username: "jane_smith"
   },
   {
-    thoughtText: "I love using eating tacos!",
+    thoughtText: "I love eating tacos!",
     username: "jane_smith"
 },
 {
