@@ -52,7 +52,7 @@ Demo video: https://drive.google.com/file/d/1sI4DkdiFWfvhST9BQUwYuU08FeGiSuyK/vi
 * User Routes
 * GET /api/users - Retrieve all users.
 * GET /api/users/:id - Retrieve a single user by its _id.
-* * POST /api/users - Create a new user.
+*  POST /api/users - Create a new user.
 * PUT /api/users/:id - Update a user by its _id.
 * DELETE /api/users/:id - Delete a user by its _id.
 * Friend Routes
